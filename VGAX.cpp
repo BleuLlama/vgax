@@ -85,8 +85,8 @@ ISR(TIMER2_OVF_vect) {
     //interrupt jitter fix (needed to keep signal stable)
     //code from https://github.com/cnlohr/avrcraft/tree/master/terminal
     //modified from 4 nop align to 8 nop align
-    #define DEJITTER_OFFSET 1
-    #define DEJITTER_SYNC -3
+    #define DEJITTER_OFFSET 0 /* 1 */
+    #define DEJITTER_SYNC   0 /* -3 */
     asm volatile(
       "     lds r16, %[timer0]    \n\t" //
       //"   add r16, %[toffset]   \n\t" //
